@@ -1,0 +1,110 @@
+.body {
+  flex-direction: column;
+  width: 100vw;
+  overscroll-behavior: none;
+  .top {
+    width: 100%;
+    padding: 10% 0 140px 50px;
+    p {
+      font-family: ballinger !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+      a {
+        text-emphasis: none;
+        text-decoration: none;
+        color: $white !important;
+      }
+    }
+    @include respond-to('small') {
+      display: none;
+    }
+  }
+  .bottom {
+    width: 100%;
+    flex-direction: column;
+    .push-right {
+      float: right;
+      width: 35vw;
+      position: relative;
+      img {
+        max-width: 40vw;
+        margin-right: 50px;
+        float: right;
+        transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+      }
+      ul {
+        float: right;
+        margin-right: 50px;
+        margin-top: 50px;
+        li {
+          color: $white;
+          transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+          font-family: ballinger !important;
+          text-align: right;
+          line-height: 1.2;
+          font-weight: 400;
+          font-size: 2.2em;
+        }
+        li:last-child {
+          color: $orange;
+        }
+      }
+      .swipe-text {
+        display: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+        color: $white;
+        font-family: ballinger !important;
+        float: right;
+      }
+      .more-details-overlay {
+        transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $deep-blue;
+        display: none;
+        p {
+          text-align: right;
+          width: calc(100% - 50px);;
+          padding-right: 50px;
+          a {
+            color: $white;
+            text-decoration: none;
+            font-family: ballinger !important;
+            font-size: 1.2em;
+          }
+        }
+        address {
+          margin-top: 30px;
+          color: $black;
+          font-size: 1.2em;
+          font-family: ballinger !important;
+        }
+      }
+      @include respond-to('small') {
+        width: 100vw;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        img {
+          display: none;
+        }
+        ul {
+          margin-top: 0;
+          li {
+            font-size: 1.8em;
+            line-height: 1.2;
+          }
+        }
+        .more-details-overlay {
+          display: block;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

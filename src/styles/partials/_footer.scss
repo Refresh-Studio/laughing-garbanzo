@@ -1,0 +1,73 @@
+footer {
+  flex-direction: row;
+  position: absolute;
+  padding: 50px 50px 50px 40px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  .left-first {
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+    float: left;
+    address {
+      color: $black;
+      font-family: ballinger !important;
+    }
+  }
+  .pulse {
+    display: none;
+    animation: pulse-animation 1s infinite;
+    border-radius: 50%;
+    float: right;
+    height: 10px;
+    .arrow {
+      width: 0;
+      height: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+      &.up {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 10px solid $orange;
+      }
+      &.down {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 10px solid $orange;
+      }
+    }
+    @include keyframes(pulse-animation) {
+      0% {
+        box-shadow: 0 0 0 0px rgba(255, 165, 0, 0.4);
+        background-color: rgba(255, 165, 0, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 0 20px rgba(255, 165, 0, 0);
+        background-color: rgba(255, 165, 0, 0);
+      } 
+    }
+  }
+  .right-first {
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+    float: right;
+    font-family: ballinger !important;
+    a {
+      height: 12px;
+      content: url('./icons/halo.svg');
+    }
+  }
+  @include respond-to('small') {
+    padding: 20px;
+    .left-first {
+      display: none;
+    }
+    .pulse {
+      display: block;
+      .arrow {
+        display: block;
+        float: right;
+      }
+    }
+    .right-first {
+      float: left;
+    }
+  }
+}

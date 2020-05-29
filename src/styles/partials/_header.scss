@@ -1,0 +1,27 @@
+$header-children-height: 26px;
+
+header {
+  padding: 50px;
+  height: $header-children-height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  img {
+    display: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+    float: left;
+    height: $header-children-height;
+  }
+  a {
+    max-height: $header-children-height;
+    float: right;
+    content: url('./icons/ig.svg');
+  }
+  @include respond-to('small') {
+    padding: 30px;
+    img {
+      display: block;
+    }
+  }
+}
